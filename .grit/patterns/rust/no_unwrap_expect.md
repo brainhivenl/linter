@@ -13,7 +13,8 @@ and {
         `$_.unwrap()`,
         `$_.expect($message)`
     },
-    within function_item(),
-    not within mod_item(name="tests")
+    within function_item() as $fn where {
+        $fn <: not after attribute_item(attribute=attribute(path="test"))
+    }
 }
 ```
