@@ -3,7 +3,7 @@ tags: [tracing]
 level: error
 ---
 
-Errors should be cast to `&dyn Error` when setting the `error` field of a span.
+Errors should be cast to `&dyn Error` when setting the `error` field of a span
 
 ```grit
 language rust

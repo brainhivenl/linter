@@ -3,7 +3,7 @@ tags: [safety]
 level: error
 ---
 
-Do not use `unwrap()` or `expect()` because it can panic. Use `match` or `if let` to handle errors gracefully.
+Do not use `unwrap()` or `expect()` because it can panic. Use `match` or `if let` to handle errors gracefully
 
 ```grit
 language rust
