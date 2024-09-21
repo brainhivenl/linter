@@ -14,7 +14,8 @@ and {
         `$_.expect($message)`
     },
     within function_item() as $fn where {
-        $fn <: not after attribute_item(attribute=attribute(path="test"))
+        $fn <: not after attribute_item(attribute=attribute(path="test")),
+        $fn <: not within mod_item(name="tests")
     }
 }
 ```
