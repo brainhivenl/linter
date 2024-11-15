@@ -12,11 +12,9 @@ function cleanup($name) js {
     return $name.text[0].toLowerCase() + $name.text.substr(1).replace(/([A-Z])/, (_, p1) => `_${p1.toLowerCase()}`)
 }
 
-or {
-    `let $ident = $_;`,
-    `let $ident: $_ = $_;`
-} where {
-    $ident <: contains r".*[A-Z-].*",
-    $ident => cleanup(text($ident))
+let_declaration(pattern=$pat) where {
+    $pat <: identifier(),
+    $pat <: contains r".*[A-Z-].*",
+    $pat => cleanup(text($pat))
 }
 ```
