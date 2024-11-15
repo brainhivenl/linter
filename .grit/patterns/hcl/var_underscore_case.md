@@ -6,16 +6,13 @@ level: error
 Variable names should use underscore_case
 
 ```grit
-language rust
+language hcl
 
 function cleanup($name) js {
-    return $name.text[0].toLowerCase() + $name.text.substr(1).replace(/([A-Z])/, (_, p1) => `_${p1.toLowerCase()}`)
+    return $name.text[0].toLowerCase() + $name.text.substr(1).replace(/([A-Z])/, (_, p1) => `_${p1.toLowerCase()}`).replace(/-/g, "_")
 }
 
-or {
-    `let $ident = $_;`,
-    `let $ident: $_ = $_;`
-} where {
+`variable $ident { $body }` where {
     $ident <: contains r".*[A-Z-].*",
     $ident => cleanup(text($ident))
 }
