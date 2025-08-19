@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
+
+id: tsx/inline_styling
+message: Inline styling is not allowed in React components, use tailwind instead
+severity: error # error, warning, info, hint
+language: TSX
+rule:
+  kind: string
+  inside:
+    kind: jsx_attribute
+    regex: ^style=

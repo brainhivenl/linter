@@ -1,0 +1,7 @@
+id: rust/tracing_error
+valid:
+  - 'tracing::error!("something went wrong", { error = &e as &dyn std::error::Error });'
+  - 'tracing::error!({ error = &e as &dyn std::error::Error }, "something went wrong");'
+invalid:
+  - 'tracing::error!("something went wrong", { error = ?e });'
+  - 'tracing::error!({ error = ?e }, "something went wrong");'

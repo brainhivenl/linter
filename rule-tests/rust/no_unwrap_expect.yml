@@ -1,0 +1,7 @@
+id: rust/no_unwrap_expect
+valid:
+  - "mod tests { fn test() { example.unwrap(); } }"
+invalid:
+  - "example.unwrap();"
+  - 'example.y.expect("hello world");'
+  - "mod inner { fn test() { example.unwrap(); } }"

@@ -1,0 +1,9 @@
+id: rust/useless_var_decl
+valid:
+  - |
+    let y = 1;
+    let x = y2;
+invalid:
+  - |
+    let y = 1;
+    let x = y;

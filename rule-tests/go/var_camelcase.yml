@@ -1,0 +1,7 @@
+id: go/var_camelcase
+valid:
+  - 'fullName := "hello"'
+  - "var fullName string"
+invalid:
+  - 'full_name := "hello"'
+  - "var full_name string"

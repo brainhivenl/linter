@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
+
+id: go/error_message_capital
+message: Error messages shouldn't start with a capital
+severity: error
+language: Go
+rule:
+  any:
+    - pattern: $PKG.$METHOD($MESSAGE)
+    - pattern: $PKG.$METHOD($MESSAGE, $$$)
+constraints:
+  PKG:
+    regex: (log|zap|slog)
+  METHOD:
+    regex: (Print|Info|Warn|Error)f?
+  MESSAGE:
+    regex: ^"[A-Z]

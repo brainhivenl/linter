@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
+
+id: rust/blocking_sleep
+message: Use tokio sleep function so that it doesn't block the scheduler
+severity: error
+language: Rust
+rule:
+  any:
+    - pattern: std::thread::$FN
+    - pattern: thread::$FN
+  inside:
+    stopBy: end
+    any:
+      - pattern: pub async fn $NAME($$$) { $$$ }
+      - pattern: async fn $NAME($$$) { $$$ }

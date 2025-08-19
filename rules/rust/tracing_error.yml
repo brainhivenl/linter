@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
+
+id: rust/tracing_error
+message: Errors should be cast to `&dyn Error` when setting the `error` field of a span
+severity: error # error, warning, info, hint
+language: Rust
+rule:
+  pattern: tracing::error!($$$)
+  has:
+    kind: token_tree
+    not:
+      regex: (as dyn|as &dyn)

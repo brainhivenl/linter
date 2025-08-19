@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
+
+id: rust/var_underscore_case
+message: Variable names should use underscore_case
+severity: error # error, warning, info, hint
+language: Rust
+rule:
+  kind: let_declaration
+  has:
+    kind: identifier
+    field: pattern
+    regex: "[A-Z-]"

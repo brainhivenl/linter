@@ -1,0 +1,5 @@
+id: rust/var_underscore_case
+valid:
+  - let full_name = "example";
+invalid:
+  - let full_Name = "example";

@@ -1,0 +1,11 @@
+id: tsx/inline_styling
+valid:
+  - |
+    function Component() {
+        return <div style={{color: "blue"}} />
+    }
+invalid:
+  - |
+    function Component() {
+        return <div style="test" />
+    }

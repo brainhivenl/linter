@@ -1,0 +1,6 @@
+id: rust/no_unsafe
+valid:
+  - "fn test() { todo!(); }"
+invalid:
+  - "fn test() { unsafe { todo!(); } }"
+  - "unsafe fn test() { todo!(); }"

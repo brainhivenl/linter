@@ -1,0 +1,11 @@
+id: tsx/html_attributes
+valid:
+  - |
+    function Component() {
+        return <div className="test" />
+    }
+invalid:
+  - |
+    function Component() {
+        return <div className='test' />
+    }

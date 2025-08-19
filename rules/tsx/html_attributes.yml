@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
+
+id: tsx/html_attributes
+message: HTML attributes should use double quotes
+severity: error # error, warning, info, hint
+language: TSX
+rule:
+  kind: jsx_attribute
+  regex: =\'

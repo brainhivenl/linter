@@ -1,0 +1,7 @@
+id: rust/blocking_sleep
+valid:
+  - "async fn test() { std::time::sleep(Duration::from_secs(1)); }"
+  - "pub async fn test() { std::time::sleep(Duration::from_secs(1)); }"
+invalid:
+  - "async fn test() { std::thread::sleep(Duration::from_secs(1)); }"
+  - "pub async fn test() { std::thread::sleep(Duration::from_secs(1)); }"

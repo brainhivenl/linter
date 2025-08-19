@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
+
+id: rust/no_unwrap_expect
+message: Do not use `unwrap()` or `expect()` because it can panic. Use `match` or `if let` to handle errors gracefully
+severity: error # error, warning, info, hint
+language: Rust
+rule:
+  any:
+    - pattern: $$$.unwrap
+    - pattern: $$$.expect
+  not:
+    inside:
+      pattern: mod tests { $$$ }
+      stopBy: end

@@ -1,0 +1,7 @@
+id: go/error_message_capital
+valid:
+  - 'log.Error("failed to query")'
+  - 'log.Errorf("failed to query: %w", err)'
+invalid:
+  - 'log.Error("Failed to query")'
+  - 'log.Errorf("Failed to query: %w", err)'
