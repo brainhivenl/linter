@@ -1,0 +1,22 @@
+id: rust/tracing_error
+snapshots:
+  tracing::error!("something went wrong", { error = ?e });:
+    labels:
+    - source: tracing::error!("something went wrong", { error = ?e })
+      style: primary
+      start: 0
+      end: 55
+    - source: ("something went wrong", { error = ?e })
+      style: secondary
+      start: 15
+      end: 55
+  tracing::error!({ error = ?e }, "something went wrong");:
+    labels:
+    - source: tracing::error!({ error = ?e }, "something went wrong")
+      style: primary
+      start: 0
+      end: 55
+    - source: ({ error = ?e }, "something went wrong")
+      style: secondary
+      start: 15
+      end: 55

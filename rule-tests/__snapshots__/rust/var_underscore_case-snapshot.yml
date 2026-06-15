@@ -1,0 +1,12 @@
+id: rust/var_underscore_case
+snapshots:
+  let full_Name = "example";:
+    labels:
+    - source: let full_Name = "example";
+      style: primary
+      start: 0
+      end: 26
+    - source: full_Name
+      style: secondary
+      start: 4
+      end: 13

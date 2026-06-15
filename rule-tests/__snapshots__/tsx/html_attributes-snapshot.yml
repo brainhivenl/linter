@@ -1,0 +1,11 @@
+id: tsx/html_attributes
+snapshots:
+  ? |
+    function Component() {
+        return <div className='test' />
+    }
+  : labels:
+    - source: className='test'
+      style: primary
+      start: 39
+      end: 55

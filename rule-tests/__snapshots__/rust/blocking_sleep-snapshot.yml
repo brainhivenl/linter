@@ -1,0 +1,22 @@
+id: rust/blocking_sleep
+snapshots:
+  async fn test() { std::thread::sleep(Duration::from_secs(1)); }:
+    labels:
+    - source: std::thread::sleep
+      style: primary
+      start: 18
+      end: 36
+    - source: async fn test() { std::thread::sleep(Duration::from_secs(1)); }
+      style: secondary
+      start: 0
+      end: 63
+  pub async fn test() { std::thread::sleep(Duration::from_secs(1)); }:
+    labels:
+    - source: std::thread::sleep
+      style: primary
+      start: 22
+      end: 40
+    - source: pub async fn test() { std::thread::sleep(Duration::from_secs(1)); }
+      style: secondary
+      start: 0
+      end: 67

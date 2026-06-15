@@ -1,0 +1,14 @@
+id: rust/no_unsafe
+snapshots:
+  fn test() { unsafe { todo!(); } }:
+    labels:
+    - source: unsafe
+      style: primary
+      start: 12
+      end: 18
+  unsafe fn test() { todo!(); }:
+    labels:
+    - source: unsafe
+      style: primary
+      start: 0
+      end: 6

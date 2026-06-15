@@ -1,0 +1,20 @@
+id: rust/no_unwrap_expect
+snapshots:
+  example.unwrap();:
+    labels:
+    - source: example.unwrap
+      style: primary
+      start: 0
+      end: 14
+  example.y.expect("hello world");:
+    labels:
+    - source: example.y.expect
+      style: primary
+      start: 0
+      end: 16
+  mod inner { fn test() { example.unwrap(); } }:
+    labels:
+    - source: example.unwrap
+      style: primary
+      start: 24
+      end: 38

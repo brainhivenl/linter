@@ -1,0 +1,26 @@
+id: go/var_camelcase
+snapshots:
+  full_name := "hello":
+    labels:
+    - source: full_name
+      style: primary
+      start: 0
+      end: 9
+    - source: full_name := "hello"
+      style: secondary
+      start: 0
+      end: 20
+    - source: full_name
+      style: secondary
+      start: 0
+      end: 9
+  var full_name string:
+    labels:
+    - source: full_name
+      style: primary
+      start: 4
+      end: 13
+    - source: full_name string
+      style: secondary
+      start: 4
+      end: 20

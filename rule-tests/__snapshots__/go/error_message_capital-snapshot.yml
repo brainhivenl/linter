@@ -1,0 +1,14 @@
+id: go/error_message_capital
+snapshots:
+  log.Error("Failed to query"):
+    labels:
+    - source: log.Error("Failed to query")
+      style: primary
+      start: 0
+      end: 28
+  'log.Errorf("Failed to query: %w", err)':
+    labels:
+    - source: 'log.Errorf("Failed to query: %w", err)'
+      style: primary
+      start: 0
+      end: 38

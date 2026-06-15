@@ -1,0 +1,14 @@
+id: rust/useless_var_decl
+snapshots:
+  ? |
+    let y = 1;
+    let x = y;
+  : labels:
+    - source: let y = 1;
+      style: primary
+      start: 0
+      end: 10
+    - source: let x = y;
+      style: secondary
+      start: 11
+      end: 21

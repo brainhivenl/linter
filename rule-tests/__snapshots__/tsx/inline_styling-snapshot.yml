@@ -1,0 +1,15 @@
+id: tsx/inline_styling
+snapshots:
+  ? |
+    function Component() {
+        return <div style="test" />
+    }
+  : labels:
+    - source: '"test"'
+      style: primary
+      start: 45
+      end: 51
+    - source: style="test"
+      style: secondary
+      start: 39
+      end: 51
